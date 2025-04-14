@@ -1,0 +1,6 @@
+@ServiceMesh.Services.CouponAPI_HostAddress = http://localhost:5250
+
+GET {{ServiceMesh.Services.CouponAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
