@@ -1,4 +1,4 @@
-﻿namespace Microservices.Services.CouponAPI.Models.DTO
+﻿namespace ServiceMesh.Services.CouponAPI.Models.DTO
 {
     public class ResponseDto
     {

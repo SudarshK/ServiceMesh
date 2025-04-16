@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Microservices.Services.CouponAPI.Models
+namespace ServiceMesh.Services.CouponAPI.Models
 {
     public class Coupon
     {

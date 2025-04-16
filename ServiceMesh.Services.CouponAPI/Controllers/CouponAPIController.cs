@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using Microservices.Services.CouponAPI.Data;
-using Microservices.Services.CouponAPI.Models;
-using Microservices.Services.CouponAPI.Models.DTO;
+using ServiceMesh.Services.CouponAPI.Data;
+using ServiceMesh.Services.CouponAPI.Models;
+using ServiceMesh.Services.CouponAPI.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Microservices.Services.CouponAPI.Controllers
+namespace ServiceMesh.Services.CouponAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

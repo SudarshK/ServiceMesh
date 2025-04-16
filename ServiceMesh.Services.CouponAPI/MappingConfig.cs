@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Microservices.Services.CouponAPI.Models;
+using ServiceMesh.Services.CouponAPI.Models;
 
-namespace Microservices.Services.CouponAPI
+namespace ServiceMesh.Services.CouponAPI
 {
     public class MappingConfig
     {

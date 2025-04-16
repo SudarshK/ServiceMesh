@@ -1,7 +1,7 @@
-﻿using Microservices.Services.CouponAPI.Models;
+﻿using ServiceMesh.Services.CouponAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Microservices.Services.CouponAPI.Data
+namespace ServiceMesh.Services.CouponAPI.Data
 {
     public class AppDbContext : DbContext
     {

@@ -1,6 +1,6 @@
 using AutoMapper;
-using Microservices.Services.CouponAPI;
-using Microservices.Services.CouponAPI.Data;
+using ServiceMesh.Services.CouponAPI;
+using ServiceMesh.Services.CouponAPI.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
