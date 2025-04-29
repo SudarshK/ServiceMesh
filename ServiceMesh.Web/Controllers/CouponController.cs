@@ -18,9 +18,14 @@ namespace ServiceMesh.Web.Controllers
         {
             List<CouponDto>? list = new();
             ResponseDto? response = await _couponService.GetAllCouponAsync();
-            if (response != null && response.IsSuccess)
+            if ((response != null) && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(response.Result));
+                //TempData["success"] = " Success";
+            }
+            else
+            {
+                TempData["error"] = response?.Message;
             }
             return View(list);
         }
@@ -38,7 +43,12 @@ namespace ServiceMesh.Web.Controllers
                 ResponseDto? response = await _couponService.CreateCouponAsync(model);
                 if (response != null && response.IsSuccess)
                 {
+                    TempData["success"] = "Created Successfully";
                     return RedirectToAction(nameof(CouponIndex));
+                }
+                else
+                {
+                    TempData["error"] = response?.Message;
                 }
             }
             return View(model);
@@ -50,18 +60,28 @@ namespace ServiceMesh.Web.Controllers
             if (response != null && response.IsSuccess)
             {
                 CouponDto? model = JsonConvert.DeserializeObject<CouponDto>(Convert.ToString(response.Result));
+
                 return View(model);
+            }
+            else
+            {
+                TempData["error"] = response?.Message;
             }
             return NotFound();
         }
 
-        [HttpDelete]
+        [HttpPost]
         public async Task<IActionResult> CouponDelete(CouponDto couponDto)
         {
             ResponseDto? response = await _couponService.DeleteCouponAsync(couponDto.CouponID);
             if (response != null && response.IsSuccess)
             {
+                TempData["success"] = "Deleted Successfully";
                 return RedirectToAction(nameof(CouponIndex));
+            }
+            else
+            {
+                TempData["error"] = response?.Message;
             }
             return View(couponDto);
         }
