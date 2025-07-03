@@ -1,11 +1,17 @@
-﻿namespace ServiceMesh.Services.Web.Models.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ServiceMesh.Services.Web.Models.DTO
 {
     public class RegistrationRequestDto
     {
-        public string Password { get; set; }
+        [Required]
         public string Email { get; set; }
+        [Required]
         public string Name { get; set; }
-        public string? Role { get; set; }
+        [Required]
         public string PhoneNumber { get; set; }
+        [Required]
+        public string Password { get; set; }
+        public string? Role { get; set; }
     }
 }

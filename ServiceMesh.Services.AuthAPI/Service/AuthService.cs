@@ -50,7 +50,8 @@ namespace ServiceMesh.Services.AuthAPI.Service
                     Token = ""
                 };
             }
-            var token = _jwtTokenGenerator.GenerateToken(user);
+            var roles = await _userManager.GetRolesAsync(user);
+            var token = _jwtTokenGenerator.GenerateToken(user,roles);
             UserDto userDto = new()
             {
                 Email = user.Email,
