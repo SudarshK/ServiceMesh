@@ -3,11 +3,13 @@ using ServiceMesh.Services.CouponAPI.Data;
 using ServiceMesh.Services.CouponAPI.Models;
 using ServiceMesh.Services.CouponAPI.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ServiceMesh.Services.CouponAPI.Controllers
 {
     [Route("api/coupon")]
     [ApiController]
+    [Authorize]
     public class CouponAPIController : ControllerBase
     {
         private readonly AppDbContext _db;
