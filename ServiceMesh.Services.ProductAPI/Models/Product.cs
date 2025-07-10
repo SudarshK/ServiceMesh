@@ -9,7 +9,7 @@ namespace ServiceMesh.Services.ProductAPI.Models
         [Required]
         public string Name { get; set; }
         [Range(1,1000)]
-        public int Price { get; set; }
+        public double Price { get; set; }
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
