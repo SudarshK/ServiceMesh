@@ -18,8 +18,8 @@ namespace ServiceMesh.Web.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.POST,
-                Data=ProductDto,
-                Url = SD.ProductAPIBase + "/api/Product"
+                Data=productDto,
+                Url = SD.ProductAPIBase + "/api/product"
             });
         }
 
@@ -28,7 +28,7 @@ namespace ServiceMesh.Web.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.DELETE,
-                Url = SD.ProductAPIBase + "/api/Product/" +id
+                Url = SD.ProductAPIBase + "/api/product/" +id
             });
         }
 
@@ -55,7 +55,7 @@ namespace ServiceMesh.Web.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.GET,
-                Url = SD.ProductAPIBase + "/api/Product/" + id
+                Url = SD.ProductAPIBase + "/api/product/" + id
             });
         }
 
@@ -64,7 +64,7 @@ namespace ServiceMesh.Web.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.PUT,
-                Data = ProductDto,
+                Data = productDto,
                 Url = SD.ProductAPIBase + "/api/product"
             });
         }
