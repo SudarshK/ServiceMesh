@@ -9,7 +9,7 @@ namespace ServiceMesh.Services.ProductAPI.Controllers
 {
     [Route("api/product")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProductAPIController : ControllerBase
     {
         private readonly AppDbContext _db;

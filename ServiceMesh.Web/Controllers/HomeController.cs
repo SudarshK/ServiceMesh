@@ -1,21 +1,52 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using ServiceMesh.Services.Web.Models.DTO;
 using ServiceMesh.Web.Models;
+using ServiceMesh.Web.Service;
 using System.Diagnostics;
 
 namespace ServiceMesh.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProductService productService)
         {
-            _logger = logger;
+            _productService = productService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            List<ProductDto>? list = new();
+            ResponseDto? response = await _productService.GetAllProductAsync();
+            if ((response != null) && response.IsSuccess)
+            {
+                list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(response.Result));
+                //TempData["success"] = " Success";
+            }
+            else
+            {
+                TempData["error"] = response?.Message;
+            }
+            return View(list);
+        }
+        [Authorize]
+        public async Task<IActionResult> ProductDetails(int productId)
+        {
+            ProductDto? model = new();
+            ResponseDto? response = await _productService.GetProductByIdAsync(productId);
+            if ((response != null) && response.IsSuccess)
+            {
+                model = JsonConvert.DeserializeObject<ProductDto>(Convert.ToString(response.Result));
+                //TempData["success"] = " Success";
+            }
+            else
+            {
+                TempData["error"] = response?.Message;
+            }
+            return View(model);
         }
 
         public IActionResult Privacy()
