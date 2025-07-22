@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceMesh.Web", "ServiceM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceMesh.Services.AuthAPI", "ServiceMesh.Services.AuthAPI\ServiceMesh.Services.AuthAPI.csproj", "{281C301D-24C9-455D-BEE5-73C022F63492}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceMesh.Services.ProductAPI", "ServiceMesh.Services.ProductAPI\ServiceMesh.Services.ProductAPI.csproj", "{CE580584-AF08-4150-8C0C-7DFCD6A70EC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceMesh.Services.ProductAPI", "ServiceMesh.Services.ProductAPI\ServiceMesh.Services.ProductAPI.csproj", "{CE580584-AF08-4150-8C0C-7DFCD6A70EC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceMesh.Services.ShoppingCartAPI", "ServiceMesh.Services.ShoppingCartAPI\ServiceMesh.Services.ShoppingCartAPI.csproj", "{C96F85C9-11AE-49E7-A83C-8A4754704BEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{CE580584-AF08-4150-8C0C-7DFCD6A70EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE580584-AF08-4150-8C0C-7DFCD6A70EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE580584-AF08-4150-8C0C-7DFCD6A70EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96F85C9-11AE-49E7-A83C-8A4754704BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96F85C9-11AE-49E7-A83C-8A4754704BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96F85C9-11AE-49E7-A83C-8A4754704BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96F85C9-11AE-49E7-A83C-8A4754704BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{8F2A9948-2001-4283-B139-40A2756993D3} = {367CD7F9-D461-42D8-9DC0-DC673A8B23BA}
 		{281C301D-24C9-455D-BEE5-73C022F63492} = {BB2EDC62-6294-4E0D-B605-EF24AF2B5BA4}
 		{CE580584-AF08-4150-8C0C-7DFCD6A70EC9} = {BB2EDC62-6294-4E0D-B605-EF24AF2B5BA4}
+		{C96F85C9-11AE-49E7-A83C-8A4754704BEB} = {BB2EDC62-6294-4E0D-B605-EF24AF2B5BA4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B0563B8-7E59-4538-AE24-82F8D1300AD6}
