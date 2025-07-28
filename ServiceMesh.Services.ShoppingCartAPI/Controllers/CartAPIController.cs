@@ -162,7 +162,8 @@ namespace ServiceMesh.Services.ShoppingCartAPI.Controllers
             {
                 CartDetails cartDetails = _db.CartDetails.First(u=> u.CartDetailsId==cartDetailsId);
                 int totalCountofCartItem = _db.CartDetails.Where(u=>u.CartHeaderId == cartDetails.CartHeaderId).Count();
-                if(totalCountofCartItem == 1)
+                _db.CartDetails.Remove(cartDetails);
+                if (totalCountofCartItem == 1)
                 {
                     var cartHeaderToRemove = await _db.CartHeaders.FirstOrDefaultAsync(u => u.CartHeaderId == cartDetails.CartHeaderId);
                     _db.CartHeaders.Remove(cartHeaderToRemove);

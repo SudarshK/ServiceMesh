@@ -12,6 +12,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.12.1" />
     <PackageReference Include="toastr" Version="2.1.1" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.15" />
+
   </ItemGroup>
 
 </Project>

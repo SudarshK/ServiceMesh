@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ServiceMesh.Web.Models;
-using ServiceMesh.Web.Service;
+using ServiceMesh.Web.Service.IService;
 using System.Collections.Generic;
 
 namespace ServiceMesh.Web.Controllers

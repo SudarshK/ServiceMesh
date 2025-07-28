@@ -1,7 +1,7 @@
 ﻿using ServiceMesh.Services.Web.Models.DTO;
 using ServiceMesh.Web.Models;
 
-namespace ServiceMesh.Web.Service
+namespace ServiceMesh.Web.Service.IService
 {
     public interface IProductService
     {
