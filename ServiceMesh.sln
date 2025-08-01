@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceMesh.Services.Produc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceMesh.Services.ShoppingCartAPI", "ServiceMesh.Services.ShoppingCartAPI\ServiceMesh.Services.ShoppingCartAPI.csproj", "{C96F85C9-11AE-49E7-A83C-8A4754704BEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceMesh.MessageBus", "ServiceMesh.MessageBus\ServiceMesh.MessageBus.csproj", "{D08051E8-4BAC-451B-AF36-01BB330FC58A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{C96F85C9-11AE-49E7-A83C-8A4754704BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C96F85C9-11AE-49E7-A83C-8A4754704BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C96F85C9-11AE-49E7-A83C-8A4754704BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D08051E8-4BAC-451B-AF36-01BB330FC58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D08051E8-4BAC-451B-AF36-01BB330FC58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D08051E8-4BAC-451B-AF36-01BB330FC58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D08051E8-4BAC-451B-AF36-01BB330FC58A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{281C301D-24C9-455D-BEE5-73C022F63492} = {BB2EDC62-6294-4E0D-B605-EF24AF2B5BA4}
 		{CE580584-AF08-4150-8C0C-7DFCD6A70EC9} = {BB2EDC62-6294-4E0D-B605-EF24AF2B5BA4}
 		{C96F85C9-11AE-49E7-A83C-8A4754704BEB} = {BB2EDC62-6294-4E0D-B605-EF24AF2B5BA4}
+		{D08051E8-4BAC-451B-AF36-01BB330FC58A} = {750E99F8-392E-4B01-8507-6DCFD4186564}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B0563B8-7E59-4538-AE24-82F8D1300AD6}

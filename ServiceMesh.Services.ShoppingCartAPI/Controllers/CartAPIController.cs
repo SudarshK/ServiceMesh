@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.PortableExecutable;
 using ServiceMesh.Services.ShoppingCartAPI.Service.IServices;
+using ServiceMesh.MessageBus;
 namespace ServiceMesh.Services.ShoppingCartAPI.Controllers
 {
     [Route("api/cart")]
@@ -20,14 +21,19 @@ namespace ServiceMesh.Services.ShoppingCartAPI.Controllers
         private IMapper _mapper;
         private readonly IProductService _productService;
         private readonly ICouponService _couponService;
+        private readonly IMessageBus _messageBus;
+        private readonly IConfiguration _configuration;
 
-        public CartAPIController(AppDbContext db, IMapper mapper,IProductService productService, ICouponService couponService)
+        public CartAPIController(AppDbContext db, 
+            IMapper mapper,IProductService productService, ICouponService couponService, IMessageBus messageBus,IConfiguration configuration)
         {
             _db = db;
             _response = new ResponseDto();
             _mapper = mapper;
             _productService = productService;
             _couponService = couponService;
+            _messageBus = messageBus;
+            _configuration = configuration;
         }
 
         [HttpGet("GetCart/{userId}")]
@@ -79,6 +85,22 @@ namespace ServiceMesh.Services.ShoppingCartAPI.Controllers
                 _db.CartHeaders.Update(cartFromDb);
                 await _db.SaveChangesAsync();
                 _response.Result= true;
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.ToString();
+            }
+            return _response;
+        }
+
+        [HttpPost("EmailCartRequest")]
+        public async Task<object> EmailCartRequest([FromBody] CartDto cartDto)
+        {
+            try
+            {
+                await _messageBus.PublishMessage(cartDto, _configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCart"));
+                _response.Result = true;
             }
             catch (Exception ex)
             {

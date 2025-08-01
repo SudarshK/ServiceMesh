@@ -9,5 +9,6 @@ namespace ServiceMesh.Web.Service.IService
         Task<ResponseDto?>UpsertCartAsync(CartDto cartDto);
         Task<ResponseDto?>RemoveFromCartAsync(int cartdetailsId);
         Task<ResponseDto?>ApplyCouponAsync(CartDto couponDto);
+        Task<ResponseDto?>EmailCart(CartDto couponDto);
     }
 }
