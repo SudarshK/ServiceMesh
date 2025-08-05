@@ -10,7 +10,7 @@ namespace ServiceMesh.MessageBus
 {
     public class MessageBus : IMessageBus
     {
-        //public string connectionString = "Endpoint=sb://servicemesh.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+zH9tDtxeCoxX624TVKMA9JV8cHjud+k8+ASbJnuka0=";
+        public string connectionString = "Endpoint=sb://servicemesh.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=+zH9tDtxeCoxX624TVKMA9JV8cHjud+k8+ASbJnuka0=";
         public async Task PublishMessage(object message, string topic_queue_Name)
         {
             await using var client = new ServiceBusClient(connectionString);
