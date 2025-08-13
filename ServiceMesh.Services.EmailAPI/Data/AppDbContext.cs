@@ -1,4 +1,4 @@
-﻿using ServiceMesh.Services.EmailAPI.Models;
+﻿using ServiceMesh.Services.EmailAPI.Model;
 using Microsoft.EntityFrameworkCore;
 using ServiceMesh.Services.EmailAPI.Model;
 
