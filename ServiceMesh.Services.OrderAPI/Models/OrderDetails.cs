@@ -15,7 +15,7 @@ namespace ServiceMesh.Services.OrderAPI.Models
         [NotMapped]
         public ProductDto? Product { get; set; }
         public int Count { get; set; }
-        public string ProductName { get; set; }
+        public string ProducName { get; set; }
         public double Price { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using ServiceMesh.Services.OrderAPI.Utility;
 
 namespace ServiceMesh.Services.OrderAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/order")]
     [ApiController]
     public class OrderAPIController : ControllerBase
     {
@@ -21,8 +21,8 @@ namespace ServiceMesh.Services.OrderAPI.Controllers
 
         public OrderAPIController(AppDbContext db,IProductService productService,IMapper mapper)
         {
-            this._response = new ResponseDto();
             _db = db;
+            this._response = new ResponseDto();
             _productService = productService;
             _mapper = mapper;
         }

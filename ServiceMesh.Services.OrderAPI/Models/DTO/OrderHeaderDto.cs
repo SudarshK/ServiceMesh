@@ -17,6 +17,6 @@ namespace ServiceMesh.Services.OrderAPI.Models.DTO
         public string? Status { get; set; }
         public string? PaymentIntentId { get; set; }
         public string? StripedSessionId { get; set; }
-        public IEnumerable<OrderDetailsDto>? OrderDetails { get; set; }
+        public IEnumerable<OrderDetailsDto> OrderDetails { get; set; }
     }
 }
