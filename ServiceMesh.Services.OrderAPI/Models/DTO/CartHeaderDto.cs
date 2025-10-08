@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace ServiceMesh.Services.ShoppingCartAPI.Models.DTO
+namespace ServiceMesh.Services.OrderAPI.Models.DTO
 {
     public class CartHeaderDto
     {

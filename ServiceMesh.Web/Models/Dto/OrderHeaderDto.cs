@@ -3,18 +3,20 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ServiceMesh.Services.Web.Models.DTO
 {
-    public class CartHeaderDto
+    public class OrderHeaderDto
     {
-        public int CartHeaderId { get; set; }
+        public int OrderHeaderId { get; set; }
         public string? UserId { get; set; }
         public string? CouponCode { get; set; }
         public double Discount { get; set; }
-        public double CartTotal { get; set; }
-        [Required]
+        public double OrderTotal { get; set; }
         public string? Name { get; set; }
-        [Required]
         public string? Phone { get; set; }
-        [Required]
         public string? Email { get; set; }
+        public DateTime OrderTime { get; set; }
+        public string? Status { get; set; }
+        public string? PaymentIntentId { get; set; }
+        public string? StripedSessionId { get; set; }
+        public IEnumerable<OrderDetailsDto>? OrderDetails { get; set; }
     }
 }
