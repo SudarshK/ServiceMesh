@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+﻿
 namespace ServiceMesh.Services.OrderAPI.Models.DTO
 {
     public class OrderDetailsDto

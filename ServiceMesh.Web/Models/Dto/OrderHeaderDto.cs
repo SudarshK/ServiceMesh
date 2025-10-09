@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
-namespace ServiceMesh.Services.Web.Models.DTO
+﻿namespace ServiceMesh.Services.Web.Models.DTO
 {
     public class OrderHeaderDto
     {
@@ -17,6 +14,6 @@ namespace ServiceMesh.Services.Web.Models.DTO
         public string? Status { get; set; }
         public string? PaymentIntentId { get; set; }
         public string? StripedSessionId { get; set; }
-        public IEnumerable<OrderDetailsDto>? OrderDetails { get; set; }
+        public IEnumerable<OrderDetailsDto> OrderDetails { get; set; }
     }
 }

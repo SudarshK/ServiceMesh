@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
+﻿
 namespace ServiceMesh.Services.OrderAPI.Models.DTO
 {
     public class OrderHeaderDto

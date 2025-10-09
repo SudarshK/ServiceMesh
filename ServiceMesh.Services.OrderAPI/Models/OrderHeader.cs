@@ -18,6 +18,6 @@ namespace ServiceMesh.Services.OrderAPI.Models
         public string? Status { get; set; }
         public string? PaymentIntentId { get; set; }
         public string? StripedSessionId { get; set; }
-        public IEnumerable<OrderDetails>? OrderDetails { get; set; }
+        public IEnumerable<OrderDetails> OrderDetails { get; set; }
     }
 }

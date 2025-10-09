@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ServiceMesh.Services.OrderAPI.Models.DTO
+﻿namespace ServiceMesh.Services.OrderAPI.Models.DTO
 {
     public class ProductDto
     {
@@ -10,5 +8,7 @@ namespace ServiceMesh.Services.OrderAPI.Models.DTO
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
+
+        public int Count { get; set; } = 1;
     }
 }
