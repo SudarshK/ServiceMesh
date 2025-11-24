@@ -47,7 +47,7 @@ namespace ServiceMesh.Web.Controllers
             {
                 //get striped session and redirect to stripe
             }
-            return View();
+            return View(cart);
         }
 
         public async Task<IActionResult> Remove(int cartDetailsId)
