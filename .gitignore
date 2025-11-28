@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#Ignore Secret keys
+C:\Users\Admin\source\repos\SudarshK\ProjectUsingMicroServices\ServiceMesh.MessageBus\MessageBus.cs
+C:\Users\Admin\source\repos\SudarshK\ProjectUsingMicroServices\ServiceMesh.Services.EmailAPI\appsettings.json
