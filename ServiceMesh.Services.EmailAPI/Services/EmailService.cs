@@ -32,6 +32,12 @@ namespace ServiceMesh.Services.EmailAPI.Services
             await LogAndEmail(message.ToString(), cartDto.CartHeader.Email);
         }
 
+        public async Task LogOrderPlaced(RewardMessage rewardsDto)
+        {
+            string message = "New Order Placed <br/> Order ID : "+ rewardsDto.OrderId;
+            await LogAndEmail(message, "sk@gmail.com");
+        }
+
         private async Task<bool> LogAndEmail(string message, string mail)
         {
             try

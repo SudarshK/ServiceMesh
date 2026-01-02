@@ -4,7 +4,7 @@ using ServiceMesh.Services.RewardAPI.Dto;
 using ServiceMesh.Services.RewardAPI.Models;
 using System.Text;
 
-namespace ServiceMesh.Services.EmailAPI.Services
+namespace ServiceMesh.Services.RewardAPI.Services
 {
     public class RewardService : IRewardService
     {

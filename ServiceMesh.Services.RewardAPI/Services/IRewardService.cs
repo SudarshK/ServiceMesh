@@ -1,7 +1,7 @@
 ﻿using ServiceMesh.Services.RewardAPI;
 using ServiceMesh.Services.RewardAPI.Dto;
 
-namespace ServiceMesh.Services.EmailAPI.Services
+namespace ServiceMesh.Services.RewardAPI.Services
 {
     public interface IRewardService
     {
