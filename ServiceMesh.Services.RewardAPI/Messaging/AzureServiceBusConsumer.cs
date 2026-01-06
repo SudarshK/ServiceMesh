@@ -20,19 +20,19 @@ namespace ServiceMesh.Services.RewardAPI.Messaging
             _configuration = configuration;
             _serviceBusConnectionString = _configuration.GetValue<string>("ServiceBusConnectionString");
             orderCreatedTopic = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedTopic");
-            orderCreatedRewardSubscription = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedRewardsUpdate");
+            orderCreatedRewardSubscription = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreated_Rewards_Subscription");
             var client = new ServiceBusClient(_serviceBusConnectionString);
             _rewardProcessor = client.CreateProcessor(orderCreatedTopic, orderCreatedRewardSubscription);
         }
 
         public async Task Start()
         {
-            _rewardProcessor.ProcessMessageAsync += OnNewOrderRewarsRequestReceived;
+            _rewardProcessor.ProcessMessageAsync += OnNewOrderRewardsRequestReceived;
             _rewardProcessor.ProcessErrorAsync += ErrorHandler;
             await _rewardProcessor.StartProcessingAsync();
         }
 
-        private async Task OnNewOrderRewarsRequestReceived(ProcessMessageEventArgs args)
+        private async Task OnNewOrderRewardsRequestReceived(ProcessMessageEventArgs args)
         {
             var message = args.Message;
             var body = Encoding.UTF8.GetString(message.Body);

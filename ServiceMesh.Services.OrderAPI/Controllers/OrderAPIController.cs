@@ -34,6 +34,21 @@ namespace ServiceMesh.Services.OrderAPI.Controllers
         }
 
         [Authorize]
+        [HttpGet("GetOrders")]
+        public ResponseDto? Get(string? userId = "")
+        {
+            try
+            {
+
+            }
+            catch (Exception ex) 
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+            return _response;
+
+        [Authorize]
         [HttpPost("CreateOrder")]
         public async Task<ResponseDto> CreateOrder([FromBody] CartDto cartDto)
         {

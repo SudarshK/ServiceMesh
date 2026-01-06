@@ -1,6 +1,6 @@
 ﻿using ServiceMesh.Services.RewardAPI.Messaging;
 
-namespace ServiceMesh.Services.EmailAPI.Extensions
+namespace ServiceMesh.Services.RewardAPI.Extensions
 {
     public static class ApplicationBuilderExtension
     {

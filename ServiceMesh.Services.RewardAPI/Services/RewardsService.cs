@@ -33,6 +33,7 @@ namespace ServiceMesh.Services.RewardAPI.Services
             catch (Exception ex)
             {
                 // log exception
+                Console.WriteLine("Errorrrrr");
             }
         }
     }
