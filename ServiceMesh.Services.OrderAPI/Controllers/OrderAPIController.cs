@@ -49,7 +49,7 @@ namespace ServiceMesh.Services.OrderAPI.Controllers
                 {
                     objList = _db.OrderHeaders.Include(u=> u.OrderDetails).Where(u=>u.UserId==userId).OrderByDescending(u=> u.OrderHeaderId).ToList();
                 }
-                _response.Result = _mapper.Map<OrderHeaderDto>(objList);
+                _response.Result = _mapper.Map<List<OrderHeaderDto>>(objList);
 
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace ServiceMesh.Services.OrderAPI.Controllers
         }
 
         [Authorize]
-        [HttpGet("GetOrder/{userId:int}")]
+        [HttpGet("GetOrder/{id:int}")]
         public ResponseDto? Get(int id)
         {
             try

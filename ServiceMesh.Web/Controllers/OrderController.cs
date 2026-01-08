@@ -4,6 +4,7 @@ using ServiceMesh.Services.Web.Models.DTO;
 using ServiceMesh.Web.Models;
 using ServiceMesh.Web.Service.IService;
 using ServiceMesh.Web.Utility;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace ServiceMesh.Web.Controllers
@@ -16,10 +17,27 @@ namespace ServiceMesh.Web.Controllers
         {
             _orderService = orderService;
         }
+
         public IActionResult OrderIndex()
         {
             return View();
         }
+        public async Task<IActionResult> OrderDetail(int orderId)
+        {
+            OrderHeaderDto orderHeaderDto = new OrderHeaderDto();
+            string userId = User.Claims.Where(u => u.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;
+            var response = await _orderService.GetOrder(orderId);
+            if (response != null && response.IsSuccess)
+            {
+                orderHeaderDto = JsonConvert.DeserializeObject<OrderHeaderDto>(Convert.ToString(response.Result));
+            }
+            if (!User.IsInRole(SD.RoleAdmin) && userId != orderHeaderDto.UserId)
+            {
+                return NotFound();
+            }
+            return View(orderHeaderDto);
+        }
+
         [HttpGet]
         public IActionResult GetAll()
         {
