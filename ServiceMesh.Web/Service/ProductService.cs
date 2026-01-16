@@ -18,8 +18,9 @@ namespace ServiceMesh.Web.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.POST,
-                Data=productDto,
-                Url = SD.ProductAPIBase + "/api/product"
+                Data = productDto,
+                Url = SD.ProductAPIBase + "/api/product",
+                ContentType = SD.ContentType.MultipartFormData
             });
         }
 
@@ -65,7 +66,9 @@ namespace ServiceMesh.Web.Service
             {
                 ApiType = SD.ApiType.PUT,
                 Data = productDto,
-                Url = SD.ProductAPIBase + "/api/product"
+                Url = SD.ProductAPIBase + "/api/product",
+                ContentType = SD.ContentType.MultipartFormData
+
             });
         }
     }

@@ -89,6 +89,8 @@ namespace ServiceMesh.Web.Controllers
 
 		public async Task<IActionResult> ProductEdit(int productId)
 		{
+            if (ModelState.IsValid)
+            {
 			ResponseDto? response = await _productService.GetProductByIdAsync(productId);
 			if (response != null && response.IsSuccess)
 			{
@@ -100,6 +102,7 @@ namespace ServiceMesh.Web.Controllers
 			{
 				TempData["error"] = response?.Message;
 			}
+            }
 			return NotFound();
 		}
 

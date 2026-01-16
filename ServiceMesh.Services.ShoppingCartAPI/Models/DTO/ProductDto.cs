@@ -10,5 +10,6 @@ namespace ServiceMesh.Services.ShoppingCartAPI.Models.DTO
         public string Description { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
+
     }
 }

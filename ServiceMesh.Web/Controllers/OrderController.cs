@@ -78,7 +78,7 @@ namespace ServiceMesh.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll(string status)
         {
             IEnumerable<OrderHeaderDto> list;
             string userId = "";
@@ -90,6 +90,23 @@ namespace ServiceMesh.Web.Controllers
             if(response != null && response.IsSuccess)
             {
                 list = JsonConvert.DeserializeObject<List<OrderHeaderDto>>(Convert.ToString(response.Result));
+                switch (status)
+                {
+                    case "approved":
+                        list = list.Where(u => u.Status == SD.Status_Approved);
+                        break;
+                    case "readyforpickup":
+                        list = list.Where(u => u.Status == SD.Status_ReadyForPickup);
+                        break;
+                    case "cancelled":
+                        list = list.Where(u => u.Status == SD.Status_Cancelled);
+                        break;
+                    case "pending":
+                        list = list.Where(u => u.Status == SD.Status_Pending);
+                        break;
+                    default :
+                        break;
+                }
             }
             else
             {
