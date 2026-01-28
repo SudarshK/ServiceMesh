@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ServiceMesh.Services.Web.Models.DTO;
 using ServiceMesh.Web.Models;
@@ -17,7 +18,7 @@ namespace ServiceMesh.Web.Controllers
         {
             _orderService = orderService;
         }
-
+        [Authorize]
         public IActionResult OrderIndex()
         {
             return View();
